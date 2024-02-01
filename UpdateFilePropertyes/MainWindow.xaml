@@ -3,20 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:UpdateFilePropertyes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="Изменение времени файла" Height="450" Width="600">
+        Title="Изменение времени файла" MaxHeight="250" MaxWidth="440" Background="Beige">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="113*" />
-            <ColumnDefinition Width="187*" />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="10*" />
-                <RowDefinition Height="10*" />
-                <RowDefinition Height="10*" />
-            </Grid.RowDefinitions>
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="2" Orientation="Horizontal">
+            <Border BorderThickness="2" BorderBrush="Black">
+                <TextBlock Name="PathDir" Height="25" Width="350" Text="Укажите папку" Margin="5,5" FontSize="14" />
+            </Border>
+            <Button Height="30" BorderBrush="Black" Margin="2" Click="Button_Add_Path">
+                <fa5:ImageAwesome Icon="Solid_FolderOpen" Foreground="Blue" />
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="2">
+            <Label Content="Время в формате ЧЧ.ММ.СС" Height="30" BorderBrush="Black" BorderThickness="2" FontSize="12" />
+            <TextBox Name="NewTime" Height="30" Width="100" Margin="2" BorderBrush="Red" BorderThickness="3" FontSize="14"
+                     Text="{Binding Test}" />
+            <Button Height="30" BorderBrush="Black" Margin="2" Click="Button_Click">
+                <StackPanel Orientation="Horizontal">
+                    <fa5:ImageAwesome Icon="Solid_Clock" Foreground="Blue" />
+                    <Label Content="Текущее время" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <DatePicker Name="NewDate" Grid.Row="1" BorderThickness="2" BorderBrush="Black"
+                    Width="120" HorizontalAlignment="Left" Margin="2" FontSize="14" />
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Button Margin="25,10,0,5" Click="Button_Change_Propertyes">
+                <StackPanel Orientation="Horizontal">
+                    <fa5:ImageAwesome Icon="Solid_Check" Foreground="Red" Height="10" Margin="2,0,2,0" />
+                    <TextBlock Text="Применить" FontWeight="Bold" Margin="0,0,5,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

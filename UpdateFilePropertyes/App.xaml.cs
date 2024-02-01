@@ -1,14 +1,8 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using Win = System.Windows;
 
 namespace UpdateFilePropertyes
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    public partial class App : Win.Application
     {
     }
-
 }
