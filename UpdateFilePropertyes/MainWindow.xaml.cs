@@ -56,9 +56,9 @@ namespace UpdateFilePropertyes
 
         private bool IsCorrectTime(string newTime)
         {
-            if (String.IsNullOrEmpty(newTime)) return false;
-            if (Regex.IsMatch(newTime, "[a-z] + [A-Z] + [;,*-]")) return false;
-            return true;
+            string pattern = "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$";
+            if (Regex.IsMatch(newTime, pattern)) return true;
+            return false;
         }
     }
 }
