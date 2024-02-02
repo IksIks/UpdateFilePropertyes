@@ -5,27 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="Изменение времени файла" MaxHeight="250" MaxWidth="440" Background="Beige">
+        Title="Изменение времени файла" MinHeight="250" MinWidth="440" MaxHeight="250" MaxWidth="440"
+        Background="Beige" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Margin="2" Orientation="Horizontal">
+        <Label Content="Укажите папку" Grid.Row="0" />
+        <StackPanel Grid.Row="1" Margin="2" Orientation="Horizontal">
             <Border BorderThickness="2" BorderBrush="Black">
-                <TextBlock Name="PathDir" Height="25" Width="350" Text="Укажите папку" FontSize="14" Padding="2" />
+                <TextBlock Name="PathDir" Height="25" Width="350" FontSize="14" Padding="2" />
             </Border>
-            <Button Height="30" BorderBrush="Black" Margin="2" Click="Button_Add_Path">
+            <Button Height="30" Margin="2" Click="Button_Add_Path">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="3" />
                 </Button.Effect>
                 <fa5:ImageAwesome Icon="Solid_FolderOpen" Foreground="Yellow" />
             </Button>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="2">
             <Label Content="Время в формате ЧЧ:ММ:СС" Height="30" BorderBrush="Black" BorderThickness="2" FontSize="12" />
             <TextBox Name="NewTime" Height="30" Width="100" Margin="2" BorderBrush="Red" BorderThickness="3" FontSize="14"
                      Background="Beige" Padding="2" />
@@ -39,9 +42,9 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <DatePicker Name="NewDate" Grid.Row="1" BorderThickness="2" BorderBrush="Black" Padding="4"
+        <DatePicker Name="NewDate" Grid.Row="2" BorderThickness="2" BorderBrush="Black" Padding="4"
                     Width="120" HorizontalAlignment="Left" Margin="2" FontSize="14" Background="Beige" />
-        <StackPanel Orientation="Horizontal" Grid.Row="3">
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
             <Button Margin="25,10,0,5" Click="Button_Change_Propertyes" Background="RosyBrown" IsDefault="True">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="3" />
